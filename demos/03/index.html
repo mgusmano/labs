@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+	<script src="../../ext/build/ext-modern-all-debug.js"></script>
+	<link href="../../ext/build/modern/theme-material/resources/theme-material-all.css" rel="stylesheet">
+	<script>
+
+Ext.define('BaseView', {
+	extend: 'Ext.Container',
+	padding: '10px',
+	initialize : function() {
+		//this.setTitle(this.xtype);
+		this.setHtml(this.xtype);
+		this.callParent();
+	}
+});
+
+Ext.define('DashboardView', {
+	extend: 'BaseView',
+	xtype: 'dashboardview'
+});
+
+Ext.define('AgenciesView', {
+	extend: 'BaseView',
+	xtype: 'agenciesview'
+});
+
+Ext.define('SpendingDetailView', {
+	extend: 'Ext.Container',
+	xtype: 'spendingdetailview',
+	//title: 'spendingdetailview',
+	html: 'spendingdetailview',
+	padding: '10px'
+});
+
+Ext.application({
+	name: 'AppCamp',
+	launch: function() {
+		Ext.Viewport.add(
+			{
+				xtype: 'container',
+				layout: 'fit',
+				items: [
+					//{	xtype: 'container', html: 'sidebarview', docked: 'left', width: 225, style: 'background:lightgray;' },
+					{
+						xtype: 'container', html: 'sidebarview', docked: 'left', width: 225, style: 'background:lightgray;',
+						items: [
+							{
+								xtype: 'treelist',
+								docked: 'left',
+								width: 225,
+								style: 'background:lightgray;',
+								store: {
+									root: {
+										expanded: true,
+										children: [
+											{ iconCls: 'x-fa fa-dashboard', text: 'Dashboard', xtype: 'dashboardview', leaf: true },
+											{ iconCls: 'x-fa fa-institution', text: 'Agencies', xtype: 'agenciesview', leaf: true },
+											{ iconCls: 'x-fa fa-dollar', text: 'Spending Detail', xtype: 'spendingdetailview', leaf: true }
+										]
+									}
+								},
+								listeners: {
+									selectionchange: function (tree, node) {
+										var centerview = Ext.getCmp('centerview');
+										var xtype = node.get('xtype');
+										centerview.setActiveItem(xtype);
+									}
+								}
+							}
+						]
+					},
+
+					{ xtype: 'container', html: 'headerview', docked: 'top', height: 50, style: 'background:lightblue;' },
+					//{ xtype: 'container', html: 'centerview', flex: 1, style: 'background:lightyellow;' },
+					{
+						xtype: 'navigationview',
+						id: 'centerview',
+						flex: 1,
+						style: 'background:lightyellow;',
+						navigationBar: false,
+						items: [
+							{ xtype: 'dashboardview' },
+							{ xtype: 'agenciesview' },
+							{ xtype: 'spendingdetailview' }
+						]
+					},
+					{ xtype: 'container', html: 'footerview', docked: 'bottom', height: 30, style: 'background:lightblue;' },
+					{	xtype: 'container', html: 'detailview', docked: 'right', width: 70, style: 'background:lightgreen;' },
+				]
+			}
+		);
+	}
+});
+
+	</script>
+</head>
+<body></body>
+</html>

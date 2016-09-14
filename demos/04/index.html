@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+	<script src="../../ext/build/ext-modern-all-debug.js"></script>
+	<link href="../../ext/build/modern/theme-triton/resources/theme-triton-all.css" rel="stylesheet">
+	<script>
+
+Ext.define('BaseView', {
+	extend: 'Ext.Container',
+	padding: '10px',
+	initialize : function() {
+		//this.setTitle(this.xtype);
+		this.setHtml(this.xtype);
+		this.callParent();
+	}
+});
+
+Ext.define('DashboardView', {
+	extend: 'BaseView',
+	xtype: 'dashboardview'
+});
+
+Ext.define('AgenciesView', {
+	extend: 'BaseView',
+	xtype: 'agenciesview'
+});
+
+Ext.define('SpendingDetailView', {
+	extend: 'Ext.Container',
+	xtype: 'spendingdetailview',
+	//title: 'spendingdetailview',
+	html: 'spendingdetailview',
+	padding: '10px'
+});
+
+Ext.application({
+	name: 'AppCamp',
+	requires: [ 'AppCamp.view.main.MainView' ],
+	launch: function() {
+		Ext.Viewport.add(
+			{ xtype: 'mainview' }
+		);
+	}
+});
+
+	</script>
+</head>
+<body></body>
+</html>

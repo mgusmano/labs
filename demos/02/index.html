@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+	<script src="../../ext/build/ext-modern-all-debug.js"></script>
+	<link href="../../ext/build/modern/theme-triton/resources/theme-triton-all.css" rel="stylesheet">
+	<script>
+
+Ext.application({
+	name: 'AppCamp',
+	launch: function() {
+		Ext.Viewport.add(
+			{
+				xtype: 'container',
+				layout: 'fit',
+				items: [
+					{	xtype: 'container', html: 'sidebarview', docked: 'left', width: 250, style: 'background:lightgray;' },
+					{ xtype: 'container', html: 'headerview', docked: 'top', height: 50, style: 'background:lightblue;' },
+					{ xtype: 'container', html: 'centerview', flex: 1, style: 'background:lightyellow;' },
+					{ xtype: 'container', html: 'footerview', docked: 'bottom', height: 30, style: 'background:lightblue;' },
+					{	xtype: 'container', html: 'detailview', docked: 'right', width: 70, style: 'background:lightgreen;' },
+				]
+			}
+		);
+	}
+});
+
+	</script>
+</head>
+<body></body>
+</html>

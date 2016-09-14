@@ -1,0 +1,8 @@
+{
+	root: {
+		expanded: true,
+		children: [
+			{ text: 'President', iconCls: 'x-fa fa-institution', xtype: 'dashboardview', leaf: true }
+		]
+	}
+}

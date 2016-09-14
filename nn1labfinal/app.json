@@ -1,0 +1,102 @@
+{
+	"name": "AppCamp",
+	"version": "1.0.0.0",
+	"indexHtmlPath": "index.html",
+	"classpath": [ "app" ],
+	"overrides": [ "overrides" ],
+	"framework": "ext",
+	"toolkit": "modern",
+	// here
+	"theme": "theme-triton",
+	// here
+	"requires": [
+		"calendar",
+		"charts",
+		"d3",
+		"pivot",
+		"pivot-d3",
+		"font-awesome"
+	],
+	"fashion": {
+		"inliner": {
+			"enable": false
+		}
+	},
+	"sass": {
+		"namespace": "AppCamp",
+		"generated": { "var": "sass/save.scss", "src": "sass/save" },
+		"etc": [ "sass/etc/all.scss" ],
+		"var": [ "sass/var/all.scss", "sass/var" ],
+		"src": [ "sass/src" ]
+	},
+	// here
+	"js": [
+		// { "path": "${framework.dir}/build/ext-modern-all-debug.js" },
+		{ "path": "app.js", "bundle": true },
+		{ "path": "js/code.js", "includeInBundle": true },
+		{ "path": "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js", "includeInBundle": true },
+		{ "path": "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js", "includeInBundle": true },
+		{ "path": "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineLite.min.js", "includeInBundle": true }
+	],
+	// here
+	"css": [
+		{ "path": "${build.out.css.path}", "bundle": true, "exclude": ["fashion"] },
+		{ "path": "css/style.css", "remote": false }
+	],
+	"loader": {
+		"cache": false,
+		"cacheParam": "_dc"
+	},
+	"production": {
+		"output": {
+			"appCache": {
+				"enable": true,
+				"path": "cache.appcache"
+			}
+		},
+		"loader": {
+			"cache": "${build.timestamp}"
+		},
+		"cache": {
+			"enable": true
+		},
+		"compressor": {
+			"type": "yui"
+		}
+	},
+	"testing": {
+	},
+	"development": {
+		"watch": {
+			"delay": 250
+		}
+	},
+	"bootstrap": {
+		"base": "${app.dir}",
+		"microloader": "microloader.js",
+		"css": "bootstrap.css"
+	},
+	"output": {
+		"base": "${workspace.build.dir}/${build.environment}/${app.name}",
+		"appCache": { "enable": false }
+	},
+	"cache": {
+		"enable": false,
+		"deltas": true
+	},
+	"appCache": {
+		"cache": [ "index.html" ],
+		"network": [ "*" ],
+		"fallback": []
+	},
+	// here
+	"resources": [
+		{ "path": "resources", "output": "shared" }
+	],
+	"archivePath": "archive",
+	"slicer": null,
+	"ignore": [
+		"(^|/)CVS(/?$|/.*?$)"
+	],
+	"id": "4b8816c7-d5d4-4e3e-8e8d-e3ad2d240c36"
+}
