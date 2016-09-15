@@ -5,29 +5,15 @@ Ext.define('AppCamp.view.main.CenterView',{
 	reference: 'centerview',
 	cls: 'centerview',
 	id: 'centerview',
-
 	layout: {
-			type: 'card',
-			animation: {
-					duration: 300,
-					easing: 'ease-out',
-					type: 'slide',
-					direction: 'right'
-			}
-	},
-
-
-
-// config: {
-// 	//showAnimation: 'flip',
-//            animation: {
-//                 duration: 1300,
-//                 easing: 'ease-out',
-//                 type: 'slide',
-//                 direction: 'right'
-//             }
-
-
+		type: 'card',
+		animation: {
+			duration: 300,
+			easing: 'ease-out',
+			type: 'slide',
+			direction: 'right'
+		}
+	}
 
 // // fade - Ext.fx.animation.Fade
 // // fadeOut - Ext.fx.animation.FadeOut
@@ -37,5 +23,4 @@ Ext.define('AppCamp.view.main.CenterView',{
 // // slide - Ext.fx.animation.Slide
 // // slideOut - Ext.fx.animation.SlideOut
 // },
-//	navigationBar: true
 });

@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.binding.BindingView',{
+Ext.define('AppCamp.view.lab02.BindingView',{
 	extend: 'AppCamp.view.base.BaseContainer',
 	xtype: 'bindingview',
 	controller: 'bindingview',

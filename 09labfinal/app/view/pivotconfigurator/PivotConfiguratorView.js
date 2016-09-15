@@ -50,14 +50,19 @@ Ext.define('AppCamp.view.pivotconfigurator.PivotConfiguratorView',{
 							header:     'Total IT Spending',
 							aggregator: 'sum',
 							formatter: 'number("$0,000.00")',
+							align: 'right',
+							width: 200,
 							settings: {
-								allowed: ['aggregate'],
-								//style: { fontWeight: 'bold' }
+								renderers: {
+									'$0,000.00': 'spendRenderer'
+								},
+								allowed: ['aggregate']
 							}
 						}, 
 						{
 								dataIndex:  'agencyName',
 								header:     'Agency Name',
+								width: 400,
 								settings: {
 										aggregators: ['count']
 										// renderers: {

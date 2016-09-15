@@ -50,7 +50,7 @@ Ext.define('AppCamp.view.reports.ReportsViewController', {
 				reportspivotgrid.reconfigurePivot({
 					colGrandTotalsPosition: 'last',
 					topAxis: [{ dataIndex:  'partOfITPortfolio' }],
-					leftAxis: [{ dataIndex: 'agency', locked : true, header: 'Agency', id: 'agency', width: 375 }],
+					leftAxis: [{ dataIndex: 'agencyName', locked : true, header: 'Agency', id: 'agency', width: 375 }],
 					aggregate: [{ dataIndex: 'totalITspendingCYB', header: 'Total IT spending', width: 200, align: 'right', renderer: function(v) {return Ext.util.Format.currency(v,'$',2)} }]
 				});
 				break;
@@ -58,7 +58,7 @@ Ext.define('AppCamp.view.reports.ReportsViewController', {
 				reportspivotgrid.reconfigurePivot({
 					colGrandTotalsPosition: 'last',
 					topAxis: [{ dataIndex:  'typeOfInvestment' }],
-					leftAxis: [{ dataIndex: 'agency', locked : true, header: 'Agency', id: 'agency', width: 375 }],
+					leftAxis: [{ dataIndex: 'agencyName', locked : true, header: 'Agency', id: 'agency', width: 375 }],
 					aggregate: [{ dataIndex: 'totalITspendingCYB', header: 'Total IT spending', width: 200, align: 'right', renderer: function(v) {
 						if (v == undefined) {
 							return '-';

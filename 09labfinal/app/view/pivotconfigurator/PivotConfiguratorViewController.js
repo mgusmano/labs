@@ -9,7 +9,15 @@ Ext.define('AppCamp.view.pivotconfigurator.PivotConfiguratorViewController', {
 	},
 
 	onPivotConfiguratorShowConfigurator: function() {
-		console.log(this.pivotconfiguratorpivotgrid);
 		this.pivotconfiguratorpivotgrid.showConfigurator();
+	},
+
+	spendRenderer: function(v) {
+		if (v == undefined) {
+			return '-';
+		}
+		else {
+			return Ext.util.Format.currency(v,'$',2)
+		}
 	}
 });

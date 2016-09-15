@@ -8,12 +8,39 @@ Ext.define('AppCamp.view.main.MainViewController', {
 		}
 	},
 
-	// minSize:0,
-	// maxSize:0,
-	// collapsed:true,
+	listen : {
+		global: {
+			agentselected: 'onAgentSelected'
+		},
+		controller : {
+			'#' : {
+				unmatchedroute : 'onUnmatchedRoute'
+			}
+		}
+	},
+
+	onUnmatchedRoute : function(route) {
+		var me = this;
+		var token = AppCamp.getApplication().getDefaultToken().toString();
+		Ext.Msg.show({
+			title: '<div style="color:red;font-size:24px;">ROUTE ERROR</div>',
+			width: 800,
+			message: '' +
+				'<div style="font-size:18px;">' + 
+				'<div>route is not found:</div>' + 
+				'<div>' + route + '</div>' + 
+				'<br><br>' +
+				'<div>You will be routed here:</div>' +
+				'<div>' + token + '</div>' +
+				'</div>', 
+			buttons: Ext.MessageBox.OK,
+			fn: function() {
+				me.redirectTo(token, true);
+			}
+		});
+	},
 
 	init: function() {
-		console.log('MainViewController init');
 		var refs = this.getReferences();
 		this.sidebarview = refs.sidebarview;
 		this.welcomeview = refs.welcomeview;
@@ -36,12 +63,18 @@ Ext.define('AppCamp.view.main.MainViewController', {
 			vm.set('maxSize', 225);
 			vm.set('navCollapsed', false);
 		}
-
-console.log(AppCamp.MenuData);
+		vm.set('firstname', State.get('firstname'));
+		vm.set('lastname', State.get('lastname'));
 		this.menuview.setStore(AppCamp.MenuData);
-		this.setUser();
-	
 		this.redirectTo( location.hash.slice(1), true );
+	},
+
+	checkAuth: function(xtype, action) {
+		// if (xtype == 'dashboardview') {
+		// 	Ext.Viewport.setActiveItem('loginview');
+		// 	action.stop();
+		// }
+		action.resume();
 	},
 
 	Route:function(xtype) {
@@ -77,9 +110,8 @@ console.log(AppCamp.MenuData);
 					}
 					else {
 						item = this.centerview.add({ xtype: xtype, heading: node.get('text') });
-						console.log(xtype + ' added to items collection');
+//						console.log(xtype + ' added to items collection');
 						this.centerview.setActiveItem(xtype);
-						//this.centerview.push({ xtype: xtype });
 					}
 				}
 				catch(ex) {
@@ -89,39 +121,27 @@ console.log(AppCamp.MenuData);
 		else {
 			this.centerview.setActiveItem(xtype);
 		}
-
 		this.menuview.setSelection(node);
-	},
-
-
-	// listen: {
-	// 	component: {
-	// 		'*': {
-	// 			viewTitle: function(view) {
-	// 				this.vm.set('view', this.vm.get('title') + ' - ' + view)
-	// 			}
-	// 		}
-	// 	}
-	// },
-
-	checkAuth: function(xtype, action) {
-		console.log('checkAuth');
-		if (xtype == 'dashboardview') {
-			Ext.Viewport.setActiveItem('loginview');
-			action.stop();
-		}
-		action.resume();
-	},
-
-	listen: {
-		global: {
-			agentselected: 'onAgentSelected'
+		if (node.parentNode.data.text != 'Root') {
+			var parentNode = this.menuview.getStore().findNode('text', node.parentNode.data.text);
+			setTimeout(function(){ parentNode.expand(); }, 5);
 		}
 	},
+
 
 	onAgentSelected: function(a) {
 		this.vm.set('agencyName', a.data.agencyName)
 	},
+
+	// listen: {
+	// 	component: {
+	// 		'*': {
+	// 			viewHeading: function(view) {
+	// 				this.vm.set('heading', this.vm.get('title') + heading)
+	// 			}
+	// 		}
+	// 	}
+	// },
 
 	control: {
 		'*': {
@@ -139,10 +159,6 @@ console.log(AppCamp.MenuData);
 		}
 	},
 
-
-
-
-
 	onHeaderViewNavToggle: function () {
 		this.vm.set('navCollapsed', !this.vm.get('navCollapsed'));
 	},
@@ -157,48 +173,7 @@ console.log(AppCamp.MenuData);
 	},
 
 	onActionsViewLogoutTap: function( ) {
-		localStorage.removeItem("role")
-		localStorage.removeItem("LoggedIn")
-		localStorage.removeItem("username");
-		this.getView().destroy();
-		AppCamp.getApplication().launch();
+		Session.logout(this.getView());
 	}
 
 });
-
-
-
-
-
-
-
-
-
-	// onSelectfieldLogonChange: function( selectfield , newValue , oldValue , eOpts ) {
-	// 	this.vm.set('firstName', newValue.data.value.firstName);
-	// 	this.vm.set('lastName', newValue.data.value.lastName);
-	// },
-
-	// i:1,
-	// onNext: function(){
-	// 	//debugger;
-	// 	var s = (window.innerHeight - 64) * this.i;
-	// 	//Ext.getCmp('spendingdetailview').scrollToRecord(this.i,true);
-	// 	Ext.getCmp('spendingdetailview').element.scrollBy(0, s, true);
-	// 	this.i = this.i + 1;
-	// },
-
-
-
-
-		// if (this.vm.get('navCollapsed')==true) {
-		// 	this.vm.set('navCollapsed', false);
-		// 	//this.sidebarview.setWidth(this.maxSize);
-		// 	//this.sidebarview.element.setWidth(this.maxSize);
-		// } else {
-		// 	this.vm.set('navCollapsed', true);
-		// 	//this.sidebarview.setWidth(this.minSize);
-		// 	//this.sidebarview.element.setWidth(this.minSize);
-		// }
-
-

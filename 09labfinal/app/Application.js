@@ -3,6 +3,7 @@ Ext.define('AppCamp.Application', {
 	name: 'AppCamp',
 	requires: [
 		'AppCamp.*',
+		'Ext.pivot.Grid',
 		'Ext.layout.Fit'
 	],
 	defaultToken : 'home-homeview',
@@ -12,27 +13,25 @@ Ext.define('AppCamp.Application', {
 	],
 	profiles: ['Phone', 'Tablet'],
 
+	showViewportCard: function(xtype) {
+		item = Ext.Viewport.child('component[xtype=' + xtype + ']');
+		if (!item) {
+			Ext.Viewport.add({ xtype: xtype });
+		}
+		Ext.Viewport.setActiveItem(xtype);
+	},
+
 	launch: function () {
-		//var init = Session.init();
-		//console.log(init);
-
-		Ext.Viewport.add(
-			{ xtype: 'splash-splashview' },
-			{ xtype: 'loginview' }
-		);
-		debugger;
-
-		//var loggedIn = localStorage.getItem("LoggedIn");
-		var loggedin = Session.get("loggedin");
+		var me = this;
+		var loggedin = State.get("loggedin");
 		if ( loggedin != true ) {
-			Ext.Viewport.setActiveItem('loginview');
+			this.showViewportCard('loginview');
 		}
 		else {
 			this.getServerData()
 			.then(function(response) {
 				AppCamp.MenuData = response.menuData;
-				Ext.Viewport.add({ xtype: 'mainview' });
-				Ext.Viewport.setActiveItem('mainview');
+				me.showViewportCard('mainview');
 				Ext.getBody().removeCls('launching');
 			}, function(e) {
 			console.log(e);
@@ -61,12 +60,12 @@ Ext.define('AppCamp.Application', {
 	},
 
 	onAppUpdate: function () {
-			Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-					function (choice) {
-							if (choice === 'yes') {
-									window.location.reload();
-							}
-					}
-			);
+		Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
+			function (choice) {
+				if (choice === 'yes') {
+					window.location.reload();
+				}
+			}
+		);
 	}
 });

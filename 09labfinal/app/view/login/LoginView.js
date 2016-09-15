@@ -1,60 +1,42 @@
 Ext.define('AppCamp.view.login.LoginView', {
 	extend: 'Ext.Container',
 	xtype: 'loginview',
-
-	requires: [
-//       'App.view.auth.LoginController'
-	],
-
 	controller: 'loginview',
+	reference: 'loginview',
+	cls: 'loginview',
+	requires: [
+		'Ext.field.Password'
+	],
+	layout: { type: 'vbox', align: 'center', pack: 'center' },
 
-	baseCls: 'auth-login',
-
-	layout: {
-			type: 'vbox',
-			align: 'center',
-			pack: 'center'
-	},
-
-	items: [{
-			cls: 'auth-header',
+	items: [
+		{
+			cls: 'loginviewheader',
 			html:
-			'<img class="logo" src="resources/app/images/omb.png" />' +
-						'<div class="title">IT Dashboard</div>'+
-					'<div class="caption">Federal Agency Spending</div>'
-	}, {
+				'<img class="logo" src="resources/app/images/omb.png" />' +
+				'<div class="title">IT Dashboard</div>' +
+				'<div class="caption">Federal Agency Spending</div>'
+		},
+		{
 			xtype: 'formpanel',
-			reference: 'form',
+			reference: 'formpanel',
 			layout: 'vbox',
-			ui: 'auth',
-
-			items: [{
-					xtype: 'textfield',
-					name: 'username',
-					placeHolder: 'Username',
-					required: true
-			}, {
-					xtype: 'passwordfield',
-					name: 'password',
-					placeHolder: 'Password',
-					required: true
-			}, {
-					xtype: 'button',
-					text: 'LOG IN',
-					iconAlign: 'right',
-					iconCls: 'x-fa fa-angle-right',
-					handler: 'onLoginTap',
-					ui: 'action'
-			}]
-	}, {
-			cls: 'auth-footer',
+			items: [
+				{ xtype: 'textfield', name: 'username', placeHolder: 'Username', required: true },
+				{ xtype: 'passwordfield', name: 'password', placeHolder: 'Password', required: true },
+				{ xtype: 'button', text: 'LOG IN', iconAlign: 'right', iconCls: 'x-fa fa-angle-right', handler: 'onLoginViewButtonClick', ui: 'action' }
+			]
+		},
+		{
+			cls: 'loginviewfooter',
 			html:
-					'<div>ExtJS AppCamp</div>'+
-					'<a href="http://www.sencha.com" target="_blank">'+
-							'<i class="logo ext ext-sencha"></i>'+
-							'<span class="label">Sencha</span>'+
-					'</a>'
-	}]
+				'<div>ExtJS AppCamp</div>' +
+				'<a href="http://www.sencha.com" target="_blank">' +
+					'<i class="logo ext ext-sencha"></i>' +
+					'<span class="label">Sencha</span>' +
+				'</a>'
+		}
+	]
 });
 
 // Ext.define('AppCamp.view.login.LoginView',{
