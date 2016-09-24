@@ -115,7 +115,7 @@ Ext.define('AppCamp.view.main.MainViewController', {
 					}
 				}
 				catch(ex) {
-					alert(ex);
+					console.log(ex);
 				}
 		}
 		else {
@@ -124,7 +124,8 @@ Ext.define('AppCamp.view.main.MainViewController', {
 		this.menuview.setSelection(node);
 		if (node.parentNode.data.text != 'Root') {
 			var parentNode = this.menuview.getStore().findNode('text', node.parentNode.data.text);
-			setTimeout(function(){ parentNode.expand(); }, 5);
+			//setTimeout(function(){ parentNode.expand(); }, 5);
+			Ext.globalEvents.on('idle',function() { parentNode.expand() }, null, { single: true });
 		}
 	},
 

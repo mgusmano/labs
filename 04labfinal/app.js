@@ -1,3 +1,6 @@
 Ext.application({ 
-	extend: 'AppCamp.Application'
+	name: 'AppCamp',
+	launch: function () {
+		debugger;
+	}
  });

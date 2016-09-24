@@ -1,53 +1,44 @@
 <!DOCTYPE HTML>
 <html manifest="">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+	<title>AppCamp</title>
 
-    <title>AppCamp</title>
+<!-- 
+	<script src="../ExtAngularWebPack/Theme/build/testing/Theme/app.js"></script>
+-->
 
-    <!--
-    <script type="text/javascript">
-        var Ext = Ext || {}; // Ext namespace won't be defined yet...
+	<script src="../ExtAngularWebPack/resources/extjs/Boot.js"></script>
+	<script src="../build/testing/AppCamp/app.js"></script>
 
-        // This function is called by the Microloader after it has performed basic
-        // device detection. The results are provided in the "tags" object. You can
-        // use these tags here or even add custom tags. These can be used by platform
-        // filters in your manifest or by platformConfig expressions in your app.
-        //
-        Ext.beforeLoad = function (tags) {
-            var s = location.search,  // the query string (ex "?foo=1&bar")
-                profile;
+	<link href="../ext/build/modern/theme-material/resources/theme-material-all.css" rel="stylesheet">
 
-            // For testing look for "?classic" or "?modern" in the URL to override
-            // device detection default.
-            //
-            if (s.match(/\bclassic\b/)) {
-                profile = 'classic';
-            }
-            else if (s.match(/\bmodern\b/)) {
-                profile = 'modern';
-            }
-            else {
-                profile = tags.desktop ? 'classic' : 'modern';
-                //profile = tags.phone ? 'modern' : 'classic';
-            }
+	<script src="app.js"></script>
+	<script src="./app/view/main/MainView.js"></script>
+	<script src="./app/view/main/MainViewController.js"></script>
+	<script src="./app/view/main/MainViewModel.js"></script>
+	<script src="./app/view/main/SidebarView.js"></script>
+	<script src="./app/view/main/WelcomeView.js"></script>
+	<script src="./app/view/main/MenuView.js"></script>
+	<script src="./app/view/main/ActionView.js"></script>
+	<script src="./app/view/main/HeaderView.js"></script>
+	<script src="./app/view/main/CenterView.js"></script>
+	<script src="./app/view/main/DetailView.js"></script>
+	<script src="./app/view/main/FooterView.js"></script>
 
-            Ext.manifest = profile; // this name must match a build profile name
+	<script src="./app/view/dashboard/DashboardView.js"></script>
+	<script src="./app/view/dashboard/DashboardViewController.js"></script>
+	<script src="./app/view/dashboard/DashboardViewModel.js"></script>
 
-            // This function is called once the manifest is available but before
-            // any data is pulled from it.
-            //
-            //return function (manifest) {
-                // peek at / modify the manifest object
-            //};
-        };
-    </script>
-    -->
-    
-    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" data-app="4b8816c7-d5d4-4e3e-8e8d-e3ad2d240c36" type="text/javascript" src="bootstrap.js"></script>
+	<script src="./app/view/agencies/AgenciesView.js"></script>
+	<script src="./app/view/agencies/AgenciesViewController.js"></script>
+	<script src="./app/view/agencies/AgenciesViewModel.js"></script>
+
+	<script src="./app/view/spendingdetail/SpendingDetailView.js"></script>
+	<script src="./app/view/spendingdetail/SpendingDetailViewController.js"></script>
+	<script src="./app/view/spendingdetail/SpendingDetailViewModel.js"></script>
 
 </head>
 <body></body>

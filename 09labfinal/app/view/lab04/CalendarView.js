@@ -18,6 +18,11 @@ Ext.define('AppCamp.view.lab04.CalendarView',{
 				autoLoad: true,
 				proxy: { type: 'memory' },
 				data: [
+					// { id: 2, title: 'Donald', eventStore: { proxy:'memory', data:[
+					// 	{calendarId: 2, title: 'Press Event', startDate: "2016-09-30T09:00:00.000Z", endDate: "2016-09-30T11:00:00.000Z"},
+					// 	{calendarId: 2, title: 'Briefing', startDate: "2016-10-02T11:30:00.000Z", endDate: "2016-10-02T15:00:00.000Z"},
+					// 	{calendarId: 2, title: 'Briefing', startDate: "2016-09-27T08:30:00.000Z", endDate: "2016-09-27T15:00:00.000Z"}
+					// ] } }
 					{ id: 2, title: 'Donald', eventStore: { proxy: { type: 'ajax', url: 'resources/app/calendars/DonaldTrump.json' } } },
 					{ id: 3, title: 'Hillary', eventStore: { proxy: { type: 'ajax', url: 'resources/app/calendars/HillaryClinton.json' } } }
 				]

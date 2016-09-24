@@ -4,6 +4,7 @@ Ext.define('AppCamp.Application', {
 	requires: ['AppCamp.*'],
 
 	launch: function () {
+		debugger;
 		this.getServerData()
 		.then(function(response) {
 			Ext.MenuData = response.menuData;
