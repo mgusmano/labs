@@ -22,6 +22,7 @@ Ext.define('AppCamp.Application', {
 	},
 
 	launch: function () {
+		//test
 		var me = this;
 		var loggedin = State.get("loggedin");
 		if ( loggedin != true ) {
