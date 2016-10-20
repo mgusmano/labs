@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.home.Detail',{
+Ext.define('AppCamp.view.main.Detail',{
 	extend: 'Ext.Container',
 	xtype: 'app-detail',
 	cls: 'detail'

@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.home.CenterView',{
+Ext.define('AppCamp.view.main.CenterView',{
 	extend: 'Ext.Container',
 	xtype: 'app-center',
 	cls: 'center',

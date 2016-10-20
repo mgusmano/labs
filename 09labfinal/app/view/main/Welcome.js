@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.home.Welcome',{
+Ext.define('AppCamp.view.main.Welcome',{
 	extend: 'Ext.Component',
 	xtype: 'app-welcome',
 	cls: 'welcome',

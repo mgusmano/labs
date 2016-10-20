@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.home.Menu',{
+Ext.define('AppCamp.view.main.Menu',{
 	extend: 'Ext.list.Tree',
 	xtype: 'app-menu',
 	cls: 'menu',

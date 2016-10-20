@@ -1,6 +1,7 @@
-Ext.define('AppCamp.view.home.Header',{
+Ext.define('AppCamp.view.main.Header',{
 	extend: 'Ext.Toolbar',
 	xtype: 'app-header',
+	cls: 'header',
 	items: [
 		{
 			xtype: 'button',

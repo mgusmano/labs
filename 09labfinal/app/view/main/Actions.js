@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.home.Actions',{
+Ext.define('AppCamp.view.main.Actions',{
 	extend: 'Ext.Container',
 	xtype: 'app-actions',
 	reference: 'actions',

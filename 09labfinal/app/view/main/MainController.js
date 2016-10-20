@@ -43,7 +43,6 @@ Ext.define('AppCamp.view.main.MainController', {
 
 	mainRoute:function(xtype) {
 		console.log('MainController-mainRoute');
-		debugger;
 		var menu = this.lookup('menu');
 		var center = this.lookup('center');
 		var node = menu.getStore().findNode('xtype', xtype);

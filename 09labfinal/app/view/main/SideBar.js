@@ -1,8 +1,7 @@
-Ext.define('AppCamp.view.home.SideBarView',{
+Ext.define('AppCamp.view.main.SideBar',{
 	extend: 'Ext.Container',
 	xtype: 'app-sidebar',
 	cls: 'sidebar',
-	
 	scrollable: true,
 	items: [
 		{ xtype: 'app-welcome', reference: 'welcome', docked: 'top', height: 100 },

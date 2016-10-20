@@ -1,4 +1,4 @@
-Ext.define('AppCamp.view.home.Footer',{
+Ext.define('AppCamp.view.main.Footer',{
 	extend: 'Ext.Container',
 	xtype: 'app-footer',
 	cls: 'footer',
