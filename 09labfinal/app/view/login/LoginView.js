@@ -1,8 +1,7 @@
 Ext.define('AppCamp.view.login.LoginView', {
 	extend: 'Ext.Container',
-	xtype: 'loginview',
+	xtype: 'app-login',
 	controller: 'loginview',
-	reference: 'loginview',
 	cls: 'loginview',
 	requires: [
 		'Ext.field.Password'

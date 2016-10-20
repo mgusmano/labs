@@ -51,7 +51,11 @@ Ext.define('AppCamp.util.Session', {
 			State.set('username', username);
 //			State.set('password', password);
 			me.setUser(username);
-			resolve(me.username);
+			resolve(username);
+
+
+
+
 		});
 	},
 
@@ -62,8 +66,8 @@ Ext.define('AppCamp.util.Session', {
 //		State.clear("password");
 		State.clear("firstname");
 		State.clear("lastname");
-		view.destroy();
-		AppCamp.getApplication().launch();
+		//view.destroy();
+		//AppCamp.getApplication().launch();
 	}
 
 });

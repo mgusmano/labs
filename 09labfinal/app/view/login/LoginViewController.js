@@ -16,7 +16,10 @@ Ext.define('AppCamp.view.login.LoginViewController', {
 		Session.login(values.username, values.password)
 		.then(function() {
 			Ext.Viewport.setMasked(false);
-			AppCamp.getApplication().launch();
+			me.redirectTo( location.hash.slice(1), true );
+
+			//fire event instead
+			//AppCamp.getApplication().launch();
 		})
 		.catch(function(errors) {
 			Ext.Msg.alert('<div style="color:red;font-size:24px;">NOT AUTHORIZED</div>', 

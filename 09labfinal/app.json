@@ -11,7 +11,7 @@
 	"framework": "ext",
 	"toolkit": "modern",
 	// here
-	"theme": "theme-material",
+	"theme": "theme-triton",
 	// here
 	"requires": [
 		"calendar",
@@ -45,9 +45,9 @@
 	},
 	// here
 	"js": [
-		// {
-		// 		"path": "${framework.dir}/build/ext-modern-all-debug.js"
-		// },
+		{
+			"path": "${framework.dir}/build/ext-modern-all-debug.js"
+		},
 		{
 			"path": "app.js",
 			"bundle": true

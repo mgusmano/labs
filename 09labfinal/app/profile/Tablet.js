@@ -2,7 +2,7 @@ Ext.define('AppCamp.profile.Tablet', {
 	extend: 'Ext.app.Profile',
 
 	views: {
-		mainview: 'AppCamp.view.main.MainView',
+		mainview: 'AppCamp.view.main.Main',
 		spendingdetailview: 'AppCamp.view.spendingdetail.SpendingDetailView'
 	},
 
