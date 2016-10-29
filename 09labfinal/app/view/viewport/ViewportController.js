@@ -10,12 +10,10 @@ Ext.define('AppCamp.view.viewport.ViewportController', {
 		}
 	},
 
-	init: function() {
-	},
+	init: function() {},
 
 	routes: { 
 		':xtype': {
-			//before: 'checkAuth',
 			before: 'restoreSession',
 			action: 'viewportRoute'
 		}
@@ -63,29 +61,5 @@ Ext.define('AppCamp.view.viewport.ViewportController', {
 	onUnmatchedRoute : function(xtype) {
 		Message.unmatchedRoute(xtype, this);
 	}
-
-
-
-	// checkAuth: function(xtype, action) {
-	// 	var loggedin = State.get("loggedin");
-	// 	if ( loggedin != true ) {
-	// 		if (this.mainView) {
-	// 			this.mainView.getController().destroy();
-	// 			console.log('mainview-destroy');
-	// 			this.mainView.destroy();
-	// 			this.mainView = null;
-	// 		}
-
-	// 		if (!this.loginView) {
-	// 			this.loginView = Ext.Viewport.add({xtype: 'app-login'});
-	// 			Ext.getBody().removeCls('launching');
-	// 		}
-	// 		Ext.Viewport.setActiveItem(this.loginView);
-	// 		action.stop(true);
-	// 	}
-	// 	else {
-	// 		action.resume();
-	// 	}
-	// },
 
 });
