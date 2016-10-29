@@ -5,63 +5,44 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
 
-<style>
-html {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url('resources/app/images/f02.jpeg');
-}
-body.launching {
--webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-	margin: 0;
-    padding: 0;
-	    width: 100%;
-    height: 100%;
-    overflow: hidden;
-		-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-	background-size: cover;
-	background-color: #3f729b;
-	background-image: url('resources/app/images/f02.jpeg');
-	//background-position: center;
-	    /*top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute !important;*/
-	&::before {
-		animation: rotate-animation 1s linear infinite;
-		transform-origin: 50% 50%;
-		background-size: cover;
-		background-image: url('resources/app/images/loading.png');
-		background-position: center;
-		content: '';
-		position: absolute;
-		margin-top: -15px;
-		margin-left: -15px;
-		top: 50%;
-		left: 50%;
-		width: 41px;
-		height: 41px;
-	}
-}
-</style>
-	<title>AppCamp</title>
+	<title>AppCamp2</title>
 	<!-- The line below must be kept intact for Sencha Cmd to build your application -->
 	<script id="microloader" data-app="4b8816c7-d5d4-4e3e-8e8d-e3ad2d240c36" type="text/javascript" src="bootstrap.js"></script>
 </head>
+<style>
+body.launching {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    xbackground-color: #080d11;
+    background-image: url('resources/app/images/f02.jpeg');
+    background-position: center;
+}
+/* /Users/marcgusmano/ng2/SenchaTraining/labs/09labfinal/sass/src/Application.scss:8 */
+body.launching::before {
+    -webkit-animation: rotate-animation 1s linear infinite;
+    animation: rotate-animation 1s linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url(resources/app/images/loading.png);
+    background-position: center;
+    content: '';
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -15px;
+    top: 50%;
+    left: 50%;
+    width: 41px;
+    height: 41px;
+}
+
+</style>
+
+
 <body class="launching"></body>
 </html>

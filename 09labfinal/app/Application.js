@@ -15,7 +15,9 @@ Ext.define('AppCamp.Application', {
 
 	init: function () {
 		Ext.Viewport.setController({type: 'viewport'});
+		Ext.Viewport.setViewModel({ type: 'viewport' });
 		Ext.Viewport.getController().init();
+		//Ext.getBody().removeCls('launching'); //too early?
 	},
 
 	onAppUpdate: function () {

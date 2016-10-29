@@ -6,13 +6,6 @@ Ext.define('AppCamp.view.main.MainController', {
 			action: 'mainRoute'
 		}
 	},
-	listen : {
-		controller : {
-			'#' : {
-				unmatchedroute : 'onUnmatchedRoute'
-			}
-		}
-	},
 
 	init: function() {
 		console.log('MainController-init');
@@ -47,14 +40,7 @@ Ext.define('AppCamp.view.main.MainController', {
 		var center = this.lookup('center');
 		var node = menu.getStore().findNode('xtype', xtype);
 		if (node == null) {
-			Ext.Msg.alert('<div style="color:red;font-size:24px;">NOT VALID</div>', 
-				'<div>Not a valid route</div>' + 
-				'<br>' +
-				'<div>' + xtype + '</div>' +
-				'', 
-				Ext.emptyFn
-			);
-			this.redirectTo(AppCamp.getApplication().getDefaultToken().toString(), true);
+			Message.unmatchedRoute(xtype, this);
 			return;
 		}
 		if (!center.getComponent(xtype)) {
@@ -62,6 +48,16 @@ Ext.define('AppCamp.view.main.MainController', {
 		}
 		center.setActiveItem(xtype);
 		menu.setSelection(node);
+	},
+
+	onMenuViewSelectionChange: function (tree, node) {
+		var vm = this.getViewModel();
+		if (this.platform == 'phone') {
+			vm.set('navCollapsed', true);
+		}
+		if (node.get('xtype') != undefined) {
+			this.redirectTo( node.get('xtype') );
+		}
 	},
 
 	getServerData: function () {
@@ -96,16 +92,6 @@ Ext.define('AppCamp.view.main.MainController', {
 		vm.set('navCollapsed', !vm.get('navCollapsed'));
 	},
 
-	onMenuViewSelectionChange: function (tree, node) {
-		var vm = this.getViewModel();
-		if (this.platform == 'phone') {
-			vm.set('navCollapsed', true);
-		}
-		if (node.get('xtype') != undefined) {
-			this.redirectTo( node.get('xtype') );
-		}
-	},
-
 	onActionsViewLogoutTap: function( ) {
 		var vm = this.getViewModel();
 		vm.set('firstname', '');
@@ -113,28 +99,6 @@ Ext.define('AppCamp.view.main.MainController', {
 
 		Session.logout(this.getView());
 		this.redirectTo(AppCamp.getApplication().getDefaultToken().toString(), true);
-	},
-
-	onUnmatchedRoute : function(route) {
-		var me = this;
-		var token = AppCamp.getApplication().getDefaultToken().toString();
-		Ext.Msg.show({
-			title: '<div style="color:red;font-size:24px;">ROUTE ERROR</div>',
-			width: 800,
-			message: '' +
-				'<div style="font-size:18px;">' + 
-				'<div>route is not found:</div>' + 
-				'<div>' + route + '</div>' + 
-				'<br><br>' +
-				'<div>You will be routed here:</div>' +
-				'<div>' + token + '</div>' +
-				'</div>', 
-			buttons: Ext.MessageBox.OK,
-			fn: function() {
-				me.redirectTo(token, true);
-			}
-		});
 	}
-
 
 });
