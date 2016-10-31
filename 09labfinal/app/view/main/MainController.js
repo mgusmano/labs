@@ -1,6 +1,6 @@
 Ext.define('AppCamp.view.main.MainController', {
 	extend: 'Ext.app.ViewController',
-	alias: 'controller.main',
+	alias: 'controller.app-main',
 	routes: { 
 		':xtype': {
 			action: 'mainRoute'
@@ -46,6 +46,9 @@ Ext.define('AppCamp.view.main.MainController', {
 		if (!center.getComponent(xtype)) {
 			center.add({ xtype: xtype, heading: node.get('text') });
 		}
+		var vm = this.getViewModel(); 
+		vm.set('heading', node.get('text'));
+		
 		center.setActiveItem(xtype);
 		menu.setSelection(node);
 	},

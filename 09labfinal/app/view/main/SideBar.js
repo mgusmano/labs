@@ -4,7 +4,7 @@ Ext.define('AppCamp.view.main.SideBar',{
 	cls: 'sidebar',
 	scrollable: true,
 	items: [
-		{ xtype: 'app-welcome', reference: 'welcome', docked: 'top', height: 100 },
+		{ xtype: 'app-welcome', reference: 'welcome', docked: 'top', bind: { height: '{welcomeHeight}'} },
 		{ xtype: 'app-menu', reference: 'menu', flex: 1 },
 		{ xtype: 'app-actions', reference: 'actions', docked: 'bottom', height: 30 }
 	]

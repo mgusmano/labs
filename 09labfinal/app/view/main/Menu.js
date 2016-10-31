@@ -8,24 +8,20 @@ Ext.define('AppCamp.view.main.Menu',{
 	ui: 'nav',
 	expanderFirst: false,
 	expanderOnly: false,
-	bind: { 
-		micro: '{navCollapsed}'
-		//store: '{menuStore}' 
-	},
+	bind: { micro: '{navCollapsed}' },
 	listeners: {
 		selectionchange: 'onMenuViewSelectionChange'
 	},
 
 	applySelection: function(node, oldSelection) {
-		//var me = this;
 		if (node == null) return;
-		if (misc.editing == true) {
+		if (Session.editing == true) {
 			var r = confirm("Unsaved Changes - Select 'Cancel' or you will lose changes");
 			if (r == false) {
 					return;
 			} 
 			else {
-				misc.editing = false;
+				Session.editing = false;
 				if (node.parentNode.data.text != 'Root') {
 					var parentNode = me.getStore().findNode('text', node.parentNode.data.text);
 					Ext.globalEvents.on('idle',function() { parentNode.expand() }, null, { single: true });
@@ -41,6 +37,5 @@ Ext.define('AppCamp.view.main.Menu',{
 			return node;
 		}
 	}
-
 
 });

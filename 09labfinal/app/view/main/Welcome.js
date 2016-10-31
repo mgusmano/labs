@@ -6,16 +6,14 @@ Ext.define('AppCamp.view.main.Welcome',{
 	tpl: '' +
 		'<tpl if="navCollapsed == false">' +
 			'<div class="profile">' +
-			'	<div class="profile_pic">' +
-			'		<img src="resources/app/users/{firstname}{lastname}.jpeg" alt="..." class="img-circle profile_img">' +
-			'	</div>' +
+			'	<img class="img-circle" src="resources/app/users/{firstname}{lastname}.jpeg" alt="...">' +
 			'	<div class="profile_info">' +
 			'		<span>Welcome,</span>' +
-			'		<h2>{firstname} {lastname}</h2>' +
+			'		<b>{firstname} {lastname}</b>' +
 			'	</div>' +
 			'</div>' +  
 		'</tpl>' +
 		'<tpl if="navCollapsed == true">' +
-			'<img src="resources/app/users/{firstname}{lastname}.jpeg" style="border-radius: 50%;height:40px;margin:5px;border: 1px solid white">' +
+			'<img class="profile_collapsed" src="resources/app/users/{firstname}{lastname}.jpeg">' +
 		'</tpl>'
 });

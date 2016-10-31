@@ -1,0 +1,54 @@
+/*
+ * This is is imported by virtue of "sass.etc" in "app.json".
+ */
+
+.v-state-header {
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: transparent !important;
+}
+
+$highlighter-color: red;
+
+.c-highlighter-hover {
+  border: 1px dashed lighten($highlighter-color, 25%);
+  z-index: 99998;
+}
+
+.c-highlighter-select {
+  border: 1px solid lighten($highlighter-color, 25%);
+  z-index: 99999 !important;
+}
+
+.c-highlighter-hover, .c-highlighter-select {
+  box-shadow: none !important;
+  background-color: white;
+  position: absolute !important;
+}
+
+
+.bart-icon {
+  background-image: url('../../resources/images/bart-icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.lisa-icon {
+  background-image: url('../../resources/images/lisa-icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.homer-icon {
+  background-image: url('../../resources/images/homer-icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.marge-icon {
+  background-image: url('../../resources/images/marge-icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+}

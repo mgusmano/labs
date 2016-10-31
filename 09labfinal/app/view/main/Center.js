@@ -2,7 +2,6 @@ Ext.define('AppCamp.view.main.CenterView',{
 	extend: 'Ext.Container',
 	xtype: 'app-center',
 	cls: 'center',
-//	id: 'center',
 	layout: {
 		type: 'card',
 		animation: {

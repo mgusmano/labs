@@ -1,8 +1,8 @@
 Ext.define('AppCamp.view.main.Main',{
 	extend: 'Ext.Container',
 	xtype: 'app-main',
-	controller: 'main',
-	viewModel: 'main',
+	controller: 'app-main',
+	viewModel: 'app-main',
 	layout: 'fit',
 	items: [
 		{	xtype: 'app-sidebar', reference: 'sidebar', docked: 'left', bind: { width: '{sidebarWidth}'} },

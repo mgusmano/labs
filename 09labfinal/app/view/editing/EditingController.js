@@ -3,11 +3,16 @@ Ext.define('AppCamp.view.editing.Editingontroller', {
 	alias: 'controller.editing',
 	
 	onEditingClick: function() {
-		misc.editing = true;
+		Session.editing = true;
+		var text = this.lookup('text');
+		text.setValue('editing');
+		
 	},
 
 	onNotEditingClick: function() {
-		misc.editing = false;
+		Session.editing = false;
+		var text = this.lookup('text');
+		text.setValue('not editing');
 	}
 
 });

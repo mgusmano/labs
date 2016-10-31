@@ -1,0 +1,87 @@
+// Include apple font for 'ios' theme (hack: named `-apple-system` to match ios font)
+$font-path: get-resource-path('fonts');
+$san-francisco-path: $font-path + '/san-francisco';
+@font-face {
+  font-family: -apple-system;
+  font-weight: 100;
+  font-style: normal;
+  src: local('San Francisco Ultrathin'), local('San-Francisco-Ultrathin'), url($san-francisco-path + '/SF-UI-Text-Ultrathin.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 100;
+  font-style: italic;
+  src: local('San Francisco Ultrathin Italic'), local('San-Francisco-Ultrathin-Italic'), url($san-francisco-path + '/SF-UI-Text-UltrathinItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 300;
+  font-style: normal;
+  src: local('San Francisco Light'), local('San-Francisco-Light'), url($san-francisco-path + '/SF-UI-Text-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 300;
+  font-style: italic;
+  src: local('San Francisco Light Italic'), local('San-Francisco-Light-Italic'), url($san-francisco-path + '/SF-UI-Text-LightItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 400;
+  font-style: normal;
+  src: local('San Francisco Regular'), local('San-Francisco-Regular'), url($san-francisco-path + '/SF-UI-Text-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 400;
+  font-style: italic;
+  src: local('San Francisco Regular Italic'), local('San-Francisco-Regular-Italic'), url($san-francisco-path + '/SF-UI-Text-RegularItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 500;
+  font-style: normal;
+  src: local('San Francisco Medium'), local('San-Francisco-Medium'), url($san-francisco-path + '/SF-UI-Text-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 500;
+  font-style: italic;
+  src: local('San Francisco Medium Italic'), local('San-Francisco-Medium-Italic'), url($san-francisco-path + '/SF-UI-Text-MediumItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 600;
+  font-style: normal;
+  src: local('San Francisco Semibold'), local('San-Francisco-Semibold'), url($san-francisco-path + '/SF-UI-Text-Semibold.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 600;
+  font-style: italic;
+  src: local('San Francisco Semibold Italic'), local('San-Francisco-Semibold-Italic'), url($san-francisco-path + '/SF-UI-Text-SemiboldItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 700;
+  font-style: normal;
+  src: local('San Francisco Bold'), local('San-Francisco-Bold'), url($san-francisco-path + '/SF-UI-Text-Bold.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 700;
+  font-style: italic;
+  src: local('San Francisco Bold Italic'), local('San-Francisco-Bold-Italic'), url($san-francisco-path + '/SF-UI-Text-BoldItalic.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 900;
+  font-style: normal;
+  src: local('San Francisco Heavy'), local('San-Francisco-Heavy'), url($san-francisco-path + '/SF-UI-Text-Heavy.otf') format('opentype');
+}
+@font-face {
+  font-family: -apple-system;
+  font-weight: 900;
+  font-style: italic;
+  src: local('San Francisco Heavy Italic'), local('San-Francisco-Heavy-Italic'), url($san-francisco-path + '/SF-UI-Text-HeavyItalic.otf') format('opentype');
+}

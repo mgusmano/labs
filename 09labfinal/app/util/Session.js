@@ -2,6 +2,8 @@ Ext.define('AppCamp.util.Session', {
 	singleton: true,
 	alternateClassName: ['Session'],
 
+	editing: false,
+
 	//in a real application this would be a server call
 	getRole: function(username) {
 		var role;

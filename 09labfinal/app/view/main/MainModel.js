@@ -1,6 +1,6 @@
 Ext.define('AppCamp.view.main.MainModel', {
 	extend: 'Ext.app.ViewModel',
-	alias: 'viewmodel.main',
+	alias: 'viewmodel.app-main',
 	data: {
 		agency: null,
 		firstName: '',
@@ -8,6 +8,10 @@ Ext.define('AppCamp.view.main.MainModel', {
 		navCollapsed: false
 	},
 	formulas: {
+		welcomeHeight: function(get) {
+			var height = get('navCollapsed') ? 50 : 150;
+			return height;
+		},
 		sidebarWidth: function(get) {
 			var width = get('navCollapsed') ? get('minSize') : get('maxSize');
 			return width;

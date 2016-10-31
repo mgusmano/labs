@@ -11,8 +11,7 @@ Ext.define('AppCamp.view.main.Header',{
 			iconCls: 'x-fa fa-navicon'
 		},
 		{ 
-			xtype: 'container', 
-			//bind: { html: '{title}' + ' - ' +  '{heading}' }
+			xtype: 'container',
 			bind: { html: '{heading}' }
 		},
 		'->',

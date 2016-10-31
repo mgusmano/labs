@@ -26,9 +26,7 @@ Ext.define('AppCamp.util.Message', {
 			'' +
 			'',
 			Ext.emptyFn
-			//function() { alert('HI') }
 		);
-	},
-
+	}
 
 });
