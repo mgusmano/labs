@@ -1,6 +1,6 @@
-Ext.define('AppCamp.view.spendingdetail.SpendingDetailView',{
+Ext.define('AppCamp.view.spendingdetail.SpendingDetail',{
 	extend: 'AppCamp.view.base.BaseContainer',
-	xtype: 'spendingdetailview',
+	xtype: 'app-spendingdetail',
 	layout: 'fit',
 	items: [
 		{

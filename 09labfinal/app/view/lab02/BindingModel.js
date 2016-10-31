@@ -1,6 +1,6 @@
-Ext.define('AppCamp.view.binding.BindingViewModel', {
+Ext.define('AppCamp.view.binding.BindingModel', {
 	extend: 'Ext.app.ViewModel',
-	alias: 'viewmodel.bindingview',
+	alias: 'viewmodel.app-binding',
 
 	stores: {
 		agencies: {
@@ -15,12 +15,4 @@ Ext.define('AppCamp.view.binding.BindingViewModel', {
 			}
 		}
 	}
-
-	// formulas: {
-	// 	name: function (get) {
-	// 		var a = get('agency');
-	// 		Ext.fireEvent('agentselected', a);
-	// 		return a;
-	// 	}
-	// }
 });

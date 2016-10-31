@@ -1,7 +1,7 @@
-Ext.define('AppCamp.view.phone.spendingdetail.SpendingDetailView',{
+Ext.define('AppCamp.view.phone.spendingdetail.SpendingDetail',{
 	extend: 'Ext.dataview.List',
-	xtype: 'spendingdetailview',
-	id: 'spendingdetailview',
+	xtype: 'app-spendingdetail',
+	//id: 'spendingdetailview',
 	store: 'AgencyPortfolioStore',
 	infinite: true,
 

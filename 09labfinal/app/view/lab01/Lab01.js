@@ -1,6 +1,6 @@
-Ext.define('AppCamp.view.lab01.Lab01View',{
+Ext.define('AppCamp.view.lab01.Lab01',{
 	extend: 'BaseContainer',
-	xtype: 'lab01view',
+	xtype: 'app-lab01',
 	layout: 'fit',
 	items: [
 		{

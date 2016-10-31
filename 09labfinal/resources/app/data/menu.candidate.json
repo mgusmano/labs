@@ -2,19 +2,19 @@
 	root: {
 		expanded: true,
 		children: [
-			{ text: 'Spending Detail', iconCls: 'x-fa fa-dollar', xtype: 'spendingdetailview', leaf: true },
+			{ text: 'Spending Detail', iconCls: 'x-fa fa-dollar', xtype: 'app-spendingdetail', leaf: true },
 			{ text: 'Spending Reports', iconCls: 'x-fa fa-dashboard', xtype: 'reports-reportsview',	leaf: true },
 			{ text: 'Editing Test', iconCls: 'x-fa fa-dashboard', xtype: 'editing',	leaf: true },
 			{ text: 'Labs', iconCls: 'x-fa fa-graduation-cap', expanded: false, selectable: false,
 				children: [
-					{ text: 'Lab01-Grid', iconCls: 'x-fa fa-code', xtype: 'lab01view', leaf: true },
-					{ text: 'Lab02-Bind', iconCls: 'x-fa fa-code', xtype: 'bindingview', leaf: true },
-					{ text: 'Lab03-Pivot', iconCls: 'x-fa fa-code', xtype: 'lab03-pivotview', leaf: true },
-					{ text: 'Lab04-Calendar', iconCls: 'x-fa fa-code', xtype: 'lab04-calendarview', leaf: true },
-					{ text: 'Lab05-PivotChart', iconCls: 'x-fa fa-code', xtype: 'lab05-pivotchartview', leaf: true }
+					{ text: 'Lab01-Grid', iconCls: 'x-fa fa-code', xtype: 'app-lab01', leaf: true },
+					{ text: 'Lab02-Bind', iconCls: 'x-fa fa-code', xtype: 'app-binding', leaf: true },
+					{ text: 'Lab03-Pivot', iconCls: 'x-fa fa-code', xtype: 'app-pivot', leaf: true },
+					{ text: 'Lab04-Calendar', iconCls: 'x-fa fa-code', xtype: 'app-calendar', leaf: true },
+					{ text: 'Lab05-PivotChart', iconCls: 'x-fa fa-code', xtype: 'app-pivotchart', leaf: true }
 				]
 			},
-			{ text: 'D3 TreeList', iconCls: 'x-fa fa-code', xtype: 'd3treelist-d3treelistview', leaf: true },
+			{ text: 'D3 TreeList', iconCls: 'x-fa fa-code', xtype: 'app-d3treelist', leaf: true },
 			{ text: 'Pivot Configurator', iconCls: 'x-fa fa-cog', rowCls: 'menu-child', xtype: 'pivotconfigurator-pivotconfiguratorview', leaf: true },
 			{ text: 'Pivot Heat Map', iconCls: 'x-fa fa-cog', rowCls: 'menu-child', xtype: 'pivotheatmap', leaf: true }
 		]

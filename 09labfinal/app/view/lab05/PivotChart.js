@@ -1,7 +1,7 @@
-Ext.define('AppCamp.view.lab05.PivotChartView',{
+Ext.define('AppCamp.view.lab05.PivotChart',{
 	extend: 'AppCamp.view.base.BaseContainer',
-	xtype: 'lab05-pivotchartview',
-	controller: 'lab05-pivotchartview',
+	xtype: 'app-pivotchart',
+	controller: 'app-pivotchart',
 	requires: [
 		'Ext.chart.CartesianChart',
 		'Ext.chart.axis.Numeric',

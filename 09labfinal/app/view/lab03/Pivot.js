@@ -1,8 +1,8 @@
-Ext.define('AppCamp.view.lab03.PivotView',{
+Ext.define('AppCamp.view.lab03.Pivot',{
 	extend: 'BaseContainer',
-	xtype: 'lab03-pivotview',
-	controller: 'lab03-pivotview',
-	viewModel: 'lab03-pivotview',
+	xtype: 'app-pivot',
+	controller: 'app-pivot',
+	viewModel: 'app-pivot',
 	layout: 'fit',
 	items: [
 		{

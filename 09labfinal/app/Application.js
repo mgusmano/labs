@@ -11,7 +11,7 @@ Ext.define('AppCamp.Application', {
 		'AppCamp.store.AgencyPortfolioStore'
 	],
 	profiles: ['Phone', 'Tablet'],
-	defaultToken : 'spendingdetailview',
+	defaultToken : 'app-spendingdetail',
 
 	init: function () {
 		Ext.Viewport.setController({type: 'viewport'});

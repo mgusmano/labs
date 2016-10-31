@@ -1,6 +1,6 @@
-Ext.define('AppCamp.view.d3treelist.D3TreeListViewModel', {
+Ext.define('AppCamp.view.d3treelist.D3TreeListModel', {
 	extend: 'Ext.app.ViewModel',
-	alias: 'viewmodel.d3treelist-d3treelistview',
+	alias: 'viewmodel.app-d3treelist',
 	requires: [
 		'Ext.d3.hierarchy.TreeMap'
 	],

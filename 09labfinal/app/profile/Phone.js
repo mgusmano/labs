@@ -3,7 +3,7 @@ Ext.define('AppCamp.profile.Phone', {
 
 	views: {
 		mainview: 'AppCamp.view.phone.main.MainView',
-		spendingdetailview: 'AppCamp.view.phone.spendingdetail.SpendingDetailView'
+		//app-spendingdetail: 'AppCamp.view.phone.spendingdetail.SpendingDetail'
 	},
 
 	isActive: function () {

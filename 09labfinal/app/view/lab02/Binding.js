@@ -1,8 +1,8 @@
-Ext.define('AppCamp.view.lab02.BindingView',{
+Ext.define('AppCamp.view.lab02.Binding',{
 	extend: 'AppCamp.view.base.BaseContainer',
-	xtype: 'bindingview',
-	controller: 'bindingview',
-	viewModel: 'bindingview',
+	xtype: 'app-binding',
+	controller: 'app-binding',
+	viewModel: 'app-binding',
 	layout: 'vbox',
 
 	items: [

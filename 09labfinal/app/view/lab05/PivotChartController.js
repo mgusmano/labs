@@ -1,6 +1,6 @@
-Ext.define('AppCamp.view.lab05.PivotChartViewController', {
+Ext.define('AppCamp.view.lab05.PivotChartController', {
 	extend: 'Ext.app.ViewController',
-	alias: 'controller.lab05-pivotchartview',
+	alias: 'controller.app-pivotchart',
 
 	init: function() {
 		var refs = this.getReferences();

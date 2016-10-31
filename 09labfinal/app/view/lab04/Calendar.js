@@ -1,9 +1,9 @@
 
-Ext.define('AppCamp.view.lab04.CalendarView',{
+Ext.define('AppCamp.view.lab04.Calendar',{
 	extend: 'AppCamp.view.base.BaseContainer',
-	xtype: 'lab04-calendarview',
-	controller: 'lab04-calendarview',
-	viewModel: 'lab04-calendarview',
+	xtype: 'app-calendar',
+	controller: 'app-calendar',
+	viewModel: 'app-calendar',
 	requires: [
 		'Ext.calendar.panel.Panel'
 	],

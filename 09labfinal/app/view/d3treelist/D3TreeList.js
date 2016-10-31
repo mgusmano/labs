@@ -1,9 +1,9 @@
 
-Ext.define('AppCamp.view.d3treelist.D3TreeListView',{
+Ext.define('AppCamp.view.d3treelist.D3TreeList',{
 	extend: 'AppCamp.view.base.BaseContainer',
-	xtype: 'd3treelist-d3treelistview',
-	controller: 'd3treelist-d3treelistview',
-	viewModel: 'd3treelist-d3treelistview',
+	xtype: 'app-d3treelist',
+	controller: 'app-d3treelist',
+	viewModel: 'app-d3treelist',
 	layout: 'fit',
 
 	items: [
